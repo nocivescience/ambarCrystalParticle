@@ -4,7 +4,7 @@ class Ambar(Scene):
     conf={
         'n_part':50,
         'colors':[YELLOW,BLUE,TEAL,GREEN,RED],
-        'radio':0.3,
+        'radio':0.2,
         'side_length':3
     }
     def construct(self):
@@ -21,7 +21,7 @@ class Ambar(Scene):
         dots=VGroup()
         myColors=it.cycle(self.conf['colors'])
         for pos,sign in zip(positions,signatures):
-            dot=Dot(self.conf['radio']).move_to(pos).set_color(next(myColors))
+            dot=Dot(radius=self.conf['radio']).move_to(pos).set_color(next(myColors))
 
             if sign=='-':
                 texto=Tex(sign).move_to(dot.get_center()).set_width(dot.get_width()-0.05).set_color(BLACK)
